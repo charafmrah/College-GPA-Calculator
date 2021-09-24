@@ -5,7 +5,9 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24592391304347827" />
         <entry key="app/src/main/res/layout/course_list_item.xml" value="0.223731884057971" />
+        <entry key="app/src/main/res/layout/fragment_add_course.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/fragment_course_add.xml" value="0.223731884057971" />
+        <entry key="app/src/main/res/layout/fragment_course_detail.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/fragment_course_list.xml" value="0.17083333333333334" />
         <entry key="app/src/main/res/layout/fragmet_course_detail.xml" value="0.223731884057971" />
       </map>
