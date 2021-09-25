@@ -9,29 +9,29 @@
     tools:context=".fragments.CourseListFragment">
 
     <TextView
-        android:id="@+id/item_name"
+        android:id="@+id/course_name"
         style="@style/Widget.Calculator.Header"
         android:layout_marginStart="@dimen/margin_between_elements"
         android:text="Course"
-        app:layout_constraintEnd_toStartOf="@+id/item_price"
+        app:layout_constraintEnd_toStartOf="@+id/course_credit"
         app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/item_price"
+        android:id="@+id/course_credit"
         style="@style/Widget.Calculator.Header"
-        android:layout_below="@+id/item_name"
+        android:layout_below="@+id/course_name"
         android:layout_marginStart="@dimen/margin_between_elements"
         android:text="Credit"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/item_quantity"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@+id/item_name"
+        app:layout_constraintStart_toEndOf="@+id/course_name"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/item_quantity"
+        android:id="@+id/course_grade"
         style="@style/Widget.Calculator.Header"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="@dimen/margin_between_elements"
@@ -39,7 +39,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@+id/item_price"
+        app:layout_constraintStart_toEndOf="@+id/course_credit"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
@@ -49,7 +49,7 @@
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_quantity" />
+        app:layout_constraintTop_toBottomOf="@+id/course_grade" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

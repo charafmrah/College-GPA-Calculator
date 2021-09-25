@@ -13,5 +13,5 @@ data class Course(
     @ColumnInfo(name = "credit")
     val courseCredit: Int,
     @ColumnInfo(name = "grade")
-    val courseGrade: Char
+    val courseGrade: String
 )
