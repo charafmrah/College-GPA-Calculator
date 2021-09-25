@@ -7,7 +7,26 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.pangolin.collegegpacalculator.databinding.FragmentAddCourseBinding
+import com.pangolin.collegegpacalculator.databinding.FragmentCourseListBinding
 
 class AddCourseFragment : Fragment() {
+
+
+    private var _binding: FragmentAddCourseBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentAddCourseBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
 
 }

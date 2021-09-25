@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/courseListFragment"
         android:name="com.pangolin.collegegpacalculator.fragments.CourseListFragment"
-        android:label="fragment_course_list"
+        android:label="GPA Calculator"
         tools:layout="@layout/fragment_course_list" >
         <action
             android:id="@+id/action_courseListFragment_to_addCourseFragment"
@@ -16,16 +16,19 @@
         <action
             android:id="@+id/action_courseListFragment_to_courseDetailFragment"
             app:destination="@id/courseDetailFragment" />
+        <argument
+            android:name="course"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/courseDetailFragment"
         android:name="com.pangolin.collegegpacalculator.fragments.CourseDetailFragment"
-        android:label="fragment_course_detail"
+        android:label="Course Detail"
         tools:layout="@layout/fragment_course_detail" />
     <fragment
         android:id="@+id/addCourseFragment"
         android:name="com.pangolin.collegegpacalculator.fragments.AddCourseFragment"
-        android:label="AddCourseFragment" >
+        android:label="Add New Course" >
         <argument
             android:name="add_fragment_title"
             app:argType="string" />
