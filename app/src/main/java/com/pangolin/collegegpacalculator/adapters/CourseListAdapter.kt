@@ -1,4 +1,4 @@
-package com.pangolin.collegegpacalculator.Adapters
+package com.pangolin.collegegpacalculator.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -36,7 +36,6 @@ class CourseListAdapter(private val onCourseClicked: (Course) -> Unit) :
                     courseName.text = course.courseName
                     courseCredit.text = course.courseCredit.toString()
                     courseGrade.text = course.courseGrade.toString()
-
                 }
             }
 
