@@ -1,4 +1,6 @@
 package com.pangolin.collegegpacalculator.fragments
 
-class CourseListFragment {
+import androidx.fragment.app.Fragment
+
+class CourseListFragment : Fragment() {
 }
