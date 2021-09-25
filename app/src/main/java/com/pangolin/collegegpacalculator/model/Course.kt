@@ -1,4 +1,4 @@
-package com.pangolin.collegegpacalculator.data
+package com.pangolin.collegegpacalculator.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

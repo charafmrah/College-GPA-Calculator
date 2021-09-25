@@ -1,4 +1,4 @@
-package com.pangolin.collegegpacalculator.data
+package com.pangolin.collegegpacalculator.model
 
 import android.content.Context
 import androidx.room.Database
