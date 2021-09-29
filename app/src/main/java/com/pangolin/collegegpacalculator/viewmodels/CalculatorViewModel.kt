@@ -28,7 +28,7 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
     private fun getUpdatedCourseEntry(
         courseId: Int,
         courseName: String,
-        courseCredit: Int,
+        courseCredit: String,
         courseGrade: String
     ): Course {
         return Course(
@@ -45,7 +45,7 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
     }
 
     private fun getNewCourseEntry(
-        courseName: String, courseCredit: Int, courseGrade: String) : Course {
+        courseName: String, courseCredit: String, courseGrade: String) : Course {
         return Course(
             courseName = courseName,
             courseCredit = courseCredit.toInt(),
