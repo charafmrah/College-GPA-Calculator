@@ -34,8 +34,8 @@ class AddCourseFragment : Fragment() {
     private fun bind(course: Course) {
         binding.apply{
             courseName.setText(course.courseName, TextView.BufferType.SPANNABLE)
-            courseCredit.setText(course.courseCredit, TextView.BufferType.SPANNABLE)
-            courseGrade.setText(course.courseGrade, TextView.BufferType.SPANNABLE)
+//            courseCredit.setText(course.courseCredit, TextView.BufferType.SPANNABLE)
+//            courseGrade.setText(course.courseGrade, TextView.BufferType.SPANNABLE)
             saveAction.setOnClickListener { updateCourse() }
         }
     }
@@ -45,8 +45,8 @@ class AddCourseFragment : Fragment() {
             viewModel.updateCourse(
                 this.navigationArgs.id,
                 this.binding.courseName.text.toString(),
-                this.binding.courseCredit.text.toString(),
-                this.binding.courseGrade.text.toString()
+//               this.binding.courseCredit.text.toString(),
+//               this.binding.courseGrade.text.toString()
             )
             val action = AddCourseFragmentDirections.actionAddCourseFragmentToCourseListFragment()
             findNavController().navigate(action)
@@ -56,8 +56,8 @@ class AddCourseFragment : Fragment() {
     private fun isEntryValid(): Boolean {
         return viewModel.isEntryValid(
             binding.courseName.text.toString(),
-            binding.courseCredit.text.toString(),
-            binding.courseGrade.text.toString()
+//            binding.courseCredit.text.toString(),
+//            binding.courseGrade.text.toString()
         )
     }
 
