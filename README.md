@@ -1,1 +1,1 @@
-# College-GPA-Calculator
+# College GPA Calculator
