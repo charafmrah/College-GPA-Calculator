@@ -25,7 +25,7 @@
         android:layout_marginStart="@dimen/margin_between_elements"
         android:text="Credit"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/item_quantity"
+        app:layout_constraintEnd_toStartOf="@+id/course_grade"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/course_name"
         app:layout_constraintTop_toTopOf="parent" />
