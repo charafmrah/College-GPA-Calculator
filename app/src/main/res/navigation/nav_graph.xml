@@ -16,9 +16,6 @@
         <action
             android:id="@+id/action_courseListFragment_to_courseDetailFragment"
             app:destination="@id/courseDetailFragment" />
-        <argument
-            android:name="course"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/courseDetailFragment"
@@ -26,7 +23,7 @@
         android:label="Course Detail"
         tools:layout="@layout/fragment_course_detail" >
         <argument
-            android:name="id"
+            android:name="course_id"
             app:argType="integer" />
     </fragment>
     <fragment
@@ -36,6 +33,10 @@
         <argument
             android:name="add_fragment_title"
             app:argType="string" />
+        <argument
+            android:name="course_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
         <action
             android:id="@+id/action_addCourseFragment_to_courseListFragment"
             app:destination="@id/courseListFragment" />

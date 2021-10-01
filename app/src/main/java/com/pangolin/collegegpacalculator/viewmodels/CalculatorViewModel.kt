@@ -39,7 +39,7 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
         )
     }
 
-    private fun addNewCourse(courseName: String, courseCredit: String, courseGrade: String) {
+    fun addNewCourse(courseName: String, courseCredit: String, courseGrade: String) {
         val newCourse = getNewCourseEntry(courseName, courseCredit, courseGrade)
         insertCourse(newCourse)
     }
