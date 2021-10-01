@@ -19,19 +19,19 @@ import com.pangolin.collegegpacalculator.databinding.FragmentCourseListBinding
 import com.pangolin.collegegpacalculator.model.Course
 import com.pangolin.collegegpacalculator.viewmodels.CalculatorViewModel
 import com.pangolin.collegegpacalculator.viewmodels.CalculatorViewModelFactory
+import android.content.Context.INPUT_METHOD_SERVICE
+import android.view.inputmethod.InputMethodManager
 
 class AddCourseFragment : Fragment() {
-
-
-
-    private var _binding: FragmentAddCourseBinding? = null
-    private val binding get() = _binding!!
 
     private val viewModel: CalculatorViewModel by activityViewModels {
         CalculatorViewModelFactory(
             (activity?.application as CalculatorApplication).database.courseDao()
         )
     }
+
+    private var _binding: FragmentAddCourseBinding? = null
+    private val binding get() = _binding!!
 
     lateinit var course: Course
 
