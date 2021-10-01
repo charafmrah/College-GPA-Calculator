@@ -21,6 +21,7 @@ import com.pangolin.collegegpacalculator.viewmodels.CalculatorViewModel
 import com.pangolin.collegegpacalculator.viewmodels.CalculatorViewModelFactory
 import android.content.Context.INPUT_METHOD_SERVICE
 import android.view.inputmethod.InputMethodManager
+import com.pangolin.collegegpacalculator.CREDITS
 
 class AddCourseFragment : Fragment() {
 
@@ -79,8 +80,11 @@ class AddCourseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = ArrayAdapter(requireContext(), R.layout.add_list_item, GRADELETTERS)
-        (binding.courseCredit.editText as? AutoCompleteTextView)?.setAdapter(adapter)
+        val gradesAdapter = ArrayAdapter(requireContext(), R.layout.add_list_item, CREDITS)
+        (binding.courseCredit.editText as? AutoCompleteTextView)?.setAdapter(gradesAdapter)
+
+        val creditAdapter = ArrayAdapter(requireContext(), R.layout.add_list_item, GRADELETTERS)
+        (binding.courseGrade.editText as? AutoCompleteTextView)?.setAdapter(creditAdapter)
     }
 
 }
