@@ -42,7 +42,7 @@ class AddCourseFragment : Fragment() {
     private fun bind(course: Course) {
         binding.apply{
             courseName.setText(course.courseName, TextView.BufferType.SPANNABLE)
-            courseCredit.getFocusables(0)
+//            courseCredit.getFocusables(0)
 //            courseGrade.editText(course.courseGrade, TextView.BufferType.SPANNABLE)
             saveAction.setOnClickListener { updateCourse() }
         }
