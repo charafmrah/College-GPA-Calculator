@@ -32,9 +32,10 @@
     <fragment
         android:id="@+id/addCourseFragment"
         android:name="com.pangolin.collegegpacalculator.fragments.AddCourseFragment"
-        android:label="Add New Course" >
+        android:label="Add New Course"
+        tools:layout="@layout/fragment_add_course" >
         <argument
-            android:name="add_fragment_title"
+            android:name="title"
             app:argType="string" />
         <argument
             android:name="course_id"
