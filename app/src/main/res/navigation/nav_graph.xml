@@ -25,6 +25,9 @@
         <argument
             android:name="course_id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_courseDetailFragment_to_addCourseFragment"
+            app:destination="@id/addCourseFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCourseFragment"

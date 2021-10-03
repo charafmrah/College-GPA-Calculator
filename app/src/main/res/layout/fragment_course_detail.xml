@@ -9,7 +9,7 @@
     tools:context=".fragments.CourseDetailFragment">
 
     <TextView
-        android:id="@+id/item_name"
+        android:id="@+id/course_name"
         style="@style/Widget.Calculator.TextView"
         android:layout_width="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,45 +17,34 @@
         tools:text="Screwdrivers" />
 
     <TextView
-        android:id="@+id/item_price"
+        android:id="@+id/course_credit"
         style="@style/Widget.Calculator.TextView"
         android:layout_width="wrap_content"
         android:layout_marginTop="@dimen/margin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_name"
+        app:layout_constraintTop_toBottomOf="@+id/course_name"
         tools:text="$5.50" />
 
     <TextView
-        android:id="@+id/item_count_label"
+        android:id="@+id/course_grade_label"
         style="@style/Widget.Calculator.TextView"
         android:layout_width="wrap_content"
         android:text="@string/quantity"
-        app:layout_constraintBaseline_toBaselineOf="@+id/item_count"
-        app:layout_constraintEnd_toStartOf="@+id/item_count"
+        app:layout_constraintBaseline_toBaselineOf="@+id/course_grade"
+        app:layout_constraintEnd_toStartOf="@+id/course_grade"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/item_count"
+        android:id="@+id/course_grade"
         style="@style/Widget.Calculator.TextView"
         android:layout_width="0dp"
         android:layout_marginStart="@dimen/margin_between_elements"
         android:layout_marginTop="@dimen/margin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/item_count_label"
-        app:layout_constraintTop_toBottomOf="@+id/item_price"
+        app:layout_constraintStart_toEndOf="@+id/course_grade_label"
+        app:layout_constraintTop_toBottomOf="@+id/course_credit"
         tools:text="5" />
-
-    <Button
-        android:id="@+id/sell_item"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
-        android:text="@string/sell"
-        app:layout_constraintBottom_toTopOf="@+id/delete_item"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_count" />
 
     <Button
         android:id="@+id/delete_item"
@@ -66,10 +55,10 @@
         android:text="@string/delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sell_item" />
+        app:layout_constraintTop_toBottomOf="@id/course_grade" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/edit_item"
+        android:id="@+id/edit_course"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_between_elements"
