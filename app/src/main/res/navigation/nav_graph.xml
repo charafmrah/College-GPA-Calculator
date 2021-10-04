@@ -43,6 +43,8 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_addCourseFragment_to_courseListFragment"
-            app:destination="@id/courseListFragment" />
+            app:destination="@id/courseListFragment"
+            app:popUpTo="@id/courseListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
