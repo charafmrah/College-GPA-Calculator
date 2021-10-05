@@ -16,20 +16,33 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Screwdrivers" />
 
+
+    <TextView
+        android:id="@+id/course_credit_label"
+        style="@style/Widget.Calculator.TextView"
+        android:layout_width="wrap_content"
+        android:text="Credits:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/course_credit"
+        app:layout_constraintEnd_toStartOf="@+id/course_credit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/course_credit"
         style="@style/Widget.Calculator.TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/margin_between_elements"
         android:layout_marginTop="@dimen/margin"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/course_credit_label"
         app:layout_constraintTop_toBottomOf="@+id/course_name"
-        tools:text="$5.50" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="4" />
 
     <TextView
         android:id="@+id/course_grade_label"
         style="@style/Widget.Calculator.TextView"
         android:layout_width="wrap_content"
-        android:text="@string/quantity"
+        android:text="Grade:"
         app:layout_constraintBaseline_toBaselineOf="@+id/course_grade"
         app:layout_constraintEnd_toStartOf="@+id/course_grade"
         app:layout_constraintHorizontal_bias="0.5"
@@ -44,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/course_grade_label"
         app:layout_constraintTop_toBottomOf="@+id/course_credit"
-        tools:text="5" />
+        tools:text="B+" />
 
     <Button
         android:id="@+id/delete_item"

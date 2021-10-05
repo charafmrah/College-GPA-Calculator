@@ -44,7 +44,7 @@ class CourseDetailFragment: Fragment() {
         binding.apply {
             courseName.text = course.courseName
             courseCredit.text = course.courseCredit.toString()
-            courseGrade.text = course.toString()
+            courseGrade.text = course.courseGrade.toString()
             deleteItem.setOnClickListener { showConfirmationDialog() }
 //            editCourse.setOnClickListener { editCourse() }
         }

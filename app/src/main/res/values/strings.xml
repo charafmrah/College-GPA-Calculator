@@ -19,4 +19,5 @@
     <string name="currency_symbol">$</string>
     <string name="edit_item">Edit Item</string>
     <string name="add_new_item">Add new item</string>
+    <string name="credit">Credit:</string>
 </resources>
