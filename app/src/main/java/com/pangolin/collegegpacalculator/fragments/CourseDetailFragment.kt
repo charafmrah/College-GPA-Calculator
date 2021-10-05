@@ -46,17 +46,17 @@ class CourseDetailFragment: Fragment() {
             courseCredit.text = course.courseCredit.toString()
             courseGrade.text = course.toString()
             deleteItem.setOnClickListener { showConfirmationDialog() }
-            editCourse.setOnClickListener { editCourse() }
+//            editCourse.setOnClickListener { editCourse() }
         }
     }
 
-    private fun editCourse() {
-        val action = CourseDetailFragmentDirections.actionCourseDetailFragmentToAddCourseFragment(
-            getString(R.string.edit_fragment_title),
-            course.id
-        )
-        this.findNavController().navigate(action)
-    }
+//    private fun editCourse() {
+//        val action = CourseDetailFragmentDirections.actionCourseDetailFragmentToAddCourseFragment(
+//            getString(R.string.edit_fragment_title),
+//            course.id
+//        )
+//        this.findNavController().navigate(action)
+//    }
 
     /**
      * Displays an alert dialog to get the user's confirmation before deleting the item.
@@ -81,5 +81,17 @@ class CourseDetailFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val id = navigationArgs.courseId
+
+        viewModel.retrieveCourse(id).observe(this.viewLifecycleOwner) { selectedCourse ->
+            course = selectedCourse
+            bind(course)
+        }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }
