@@ -4,10 +4,48 @@ import androidx.lifecycle.*
 import com.pangolin.collegegpacalculator.model.Course
 import com.pangolin.collegegpacalculator.model.CourseDao
 import kotlinx.coroutines.launch
+import kotlin.math.roundToLong
 
 class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
 
     val allCourses: LiveData<List<Course>> = courseDao.getCourses().asLiveData()
+
+    fun calculateGpa(): Double {
+        val gpa = 0.0
+        var creditTimesGrade = 0.0
+        var credits = 0
+
+        allCourses.value?.forEach{
+            credits += it.courseCredit
+        }
+
+        allCourses.value?.forEach {
+            creditTimesGrade += it.courseCredit * letterGradeToNumber(it.courseGrade)
+        }
+
+        return String.format("%.2f", creditTimesGrade / credits).toDouble()
+    }
+
+    fun letterGradeToNumber(letterGrade: String): Double {
+        var result: Double
+
+        when(letterGrade) {
+            "A" -> result = 4.0
+            "A-" -> result = 3.67
+            "B+" -> result = 3.33
+            "B" -> result = 3.0
+            "B-" -> result = 2.67
+            "C+" -> result = 2.33
+            "C" -> result = 2.0
+            "C-" -> result = 1.67
+            "D+" -> result = 1.33
+            "D" -> result = 1.0
+            "D-" -> result = 0.67
+            else -> result = 0.0
+        }
+
+        return result
+    }
 
     fun updateCourse(
         courseId: Int,

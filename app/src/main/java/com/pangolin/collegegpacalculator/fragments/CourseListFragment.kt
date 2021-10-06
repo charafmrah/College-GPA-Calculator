@@ -51,7 +51,9 @@ class CourseListFragment : Fragment() {
         viewModel.allCourses.observe(this.viewLifecycleOwner) {
             courses -> courses.let {
                 adapter.submitList(it)
+
             }
+            binding.gpaResult.text = viewModel.calculateGpa().toString()
         }
 
         binding.floatingActionButton.setOnClickListener {
@@ -60,6 +62,8 @@ class CourseListFragment : Fragment() {
             )
             this.findNavController().navigate(action)
         }
+
+
     }
 
 }
