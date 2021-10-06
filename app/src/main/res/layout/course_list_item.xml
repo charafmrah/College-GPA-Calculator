@@ -12,8 +12,9 @@
         android:id="@+id/course_name"
         style="@style/Widget.Calculator.ListItemTextView"
         android:layout_width="180dp"
-        android:layout_marginStart="@dimen/margin_between_elements"
+        android:layout_marginStart="14dp"
         android:fontFamily="sans-serif"
+
         app:layout_constraintEnd_toStartOf="@+id/course_credit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

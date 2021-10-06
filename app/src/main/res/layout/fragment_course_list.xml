@@ -56,7 +56,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
-        android:layout_margin="@dimen/margin_between_elements"
         app:layout_constraintEnd_toEndOf="@id/gpa_result_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
