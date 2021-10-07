@@ -12,12 +12,11 @@
         android:id="@+id/course_name"
         style="@style/Widget.Calculator.ListItemTextView"
         android:layout_width="180dp"
-        android:layout_marginStart="14dp"
         android:fontFamily="sans-serif"
-
         app:layout_constraintEnd_toStartOf="@+id/course_credit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_weight="2"
         tools:text="Calculus I" />
 
     <TextView
@@ -25,7 +24,6 @@
         style="@style/Widget.Calculator.ListItemTextView"
         android:layout_width="100dp"
         android:layout_below="@+id/course_name"
-        android:layout_marginStart="@dimen/margin_between_elements"
         android:fontFamily="sans-serif-medium"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/course_grade"
@@ -39,7 +37,6 @@
         style="@style/Widget.Calculator.ListItemTextView"
         android:layout_width="80dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/margin_between_elements"
         android:fontFamily="sans-serif-medium"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
