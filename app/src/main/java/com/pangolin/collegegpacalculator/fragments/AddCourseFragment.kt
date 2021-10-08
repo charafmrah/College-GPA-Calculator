@@ -59,7 +59,7 @@ class AddCourseFragment : Fragment() {
 
     // Binds views with the passed in [course] information
     private fun bind(course: Course) {
-        binding.apply{
+        binding.apply {
             courseName.setText(course.courseName, TextView.BufferType.SPANNABLE)
 //            courseCredit.getFocusables(0)
 //            courseGrade.editText(course.courseGrade, TextView.BufferType.SPANNABLE)
@@ -82,7 +82,7 @@ class AddCourseFragment : Fragment() {
 
     // Updadtes an existing Course in the database and navigates up to list fragment
     private fun updateCourse() {
-        if(isEntryValid()) {
+        if (isEntryValid()) {
             viewModel.updateCourse(
                 this.navigationArgs.courseId,
                 this.binding.courseName.text.toString(),

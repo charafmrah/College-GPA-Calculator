@@ -38,9 +38,9 @@ class CourseListFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: CalculatorViewModel by activityViewModels {
-            CalculatorViewModelFactory(
-                (activity?.application as CalculatorApplication).database.courseDao()
-            )
+        CalculatorViewModelFactory(
+            (activity?.application as CalculatorApplication).database.courseDao()
+        )
     }
 
     override fun onCreateView(
@@ -66,8 +66,8 @@ class CourseListFragment : Fragment() {
 
         // Attach an observer on the allCourses list to update the  UI automatically when
         // the data changes
-        viewModel.allCourses.observe(this.viewLifecycleOwner) {
-            courses -> courses.let {
+        viewModel.allCourses.observe(this.viewLifecycleOwner) { courses ->
+            courses.let {
                 adapter.submitList(it)
 
             }

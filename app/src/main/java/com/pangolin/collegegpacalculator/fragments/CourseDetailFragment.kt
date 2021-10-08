@@ -33,7 +33,7 @@ import com.pangolin.collegegpacalculator.viewmodels.CalculatorViewModel
 import com.pangolin.collegegpacalculator.viewmodels.CalculatorViewModelFactory
 
 // [CourseDetailFragment] displays the details of the  selected course
-class CourseDetailFragment: Fragment() {
+class CourseDetailFragment : Fragment() {
 
     private val navigationArgs: CourseDetailFragmentArgs by navArgs()
     lateinit var course: Course

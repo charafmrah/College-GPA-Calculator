@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2021 The Android Open Source Project.
  *
@@ -26,14 +25,16 @@ import com.pangolin.collegegpacalculator.model.Course
 
 // [ListAdapater] implementation for the recyclerview
 class CourseListAdapter(private val onCourseClicked: (Course) -> Unit) :
-    ListAdapter<Course, CourseListAdapter.CourseViewHolder>(DiffCallback){
+    ListAdapter<Course, CourseListAdapter.CourseViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
-        return CourseViewHolder(CourseListItemBinding.inflate(
-            LayoutInflater.from(
-                parent.context
+        return CourseViewHolder(
+            CourseListItemBinding.inflate(
+                LayoutInflater.from(
+                    parent.context
+                )
             )
-        ))
+        )
     }
 
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
@@ -45,18 +46,18 @@ class CourseListAdapter(private val onCourseClicked: (Course) -> Unit) :
         holder.bind(current)
     }
 
-    class CourseViewHolder(private var binding:CourseListItemBinding) :
+    class CourseViewHolder(private var binding: CourseListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(course: Course) {
-                binding.apply {
-                    courseName.text = course.courseName
-                    courseCredit.text = course.courseCredit.toString()
-                    courseGrade.text = course.courseGrade.toString()
-                }
+        fun bind(course: Course) {
+            binding.apply {
+                courseName.text = course.courseName
+                courseCredit.text = course.courseCredit.toString()
+                courseGrade.text = course.courseGrade.toString()
             }
-
         }
+
+    }
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Course>() {

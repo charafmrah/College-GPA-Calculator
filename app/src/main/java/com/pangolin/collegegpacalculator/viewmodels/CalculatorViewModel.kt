@@ -49,7 +49,7 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
     fun letterGradeToNumber(letterGrade: String): Double {
         var result: Double
 
-        when(letterGrade) {
+        when (letterGrade) {
             "A" -> result = 4.0
             "A-" -> result = 3.67
             "B+" -> result = 3.33
@@ -114,7 +114,8 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
     * Returns an instance of the [Course] entity class with the course info updadtedd by the user
      */
     private fun getNewCourseEntry(
-        courseName: String, courseCredit: String, courseGrade: String) : Course {
+        courseName: String, courseCredit: String, courseGrade: String
+    ): Course {
         return Course(
             courseName = courseName,
             courseCredit = courseCredit.toInt(),
@@ -143,7 +144,8 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
 
     // Returns true if the EditTexts are not empty
     fun isEntryValid(
-        courseName: String, courseCredit: String, courseGrade: String): Boolean {
+        courseName: String, courseCredit: String, courseGrade: String
+    ): Boolean {
         return !(courseName.isBlank() || courseCredit.isBlank() || courseGrade.isBlank())
     }
 
