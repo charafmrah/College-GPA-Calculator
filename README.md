@@ -6,12 +6,11 @@ Calculate your GPA using our calculator by adding your courses credits & grades.
 
 ## Screenshots
 
-![App Screenshot]()
-
-![App Screenshot 1](https://user-images.githubusercontent.com/20629020/136551803-991bc241-92f9-44d1-9753-bd1545b34863.png)
-![App Screenshot 2](https://user-images.githubusercontent.com/20629020/136551822-397ea716-d50a-4f90-bb7c-d5ed762b7e89.png)
-![App Screenshot 3](https://user-images.githubusercontent.com/20629020/136551823-9c46d1ee-852b-4e6c-83f2-bff91742a1e2.png)
-
+<p>
+   <img src="https://user-images.githubusercontent.com/20629020/136551803-991bc241-92f9-44d1-9753-bd1545b34863.png" height="500" >
+   <img src="https://user-images.githubusercontent.com/20629020/136551822-397ea716-d50a-4f90-bb7c-d5ed762b7e89.png" height="500" >
+   <img src="https://user-images.githubusercontent.com/20629020/136551823-9c46d1ee-852b-4e6c-83f2-bff91742a1e2.png" height="500" >
+</p>
     
 ## Roadmap
 
