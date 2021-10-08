@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2021 The Android Open Source Project.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.pangolin.collegegpacalculator.fragments
 
 import android.os.Bundle
@@ -26,12 +41,14 @@ import com.pangolin.collegegpacalculator.CREDITS
 
 class AddCourseFragment : Fragment() {
 
+    // To share the view  model accross fragments
     private val viewModel: CalculatorViewModel by activityViewModels {
         CalculatorViewModelFactory(
             (activity?.application as CalculatorApplication).database.courseDao()
         )
     }
 
+    // Binding object instance correspondding to the fragment_add_course.xml layout
     private var _binding: FragmentAddCourseBinding? = null
     private val binding get() = _binding!!
 
@@ -39,6 +56,8 @@ class AddCourseFragment : Fragment() {
 
     private val navigationArgs: CourseDetailFragmentArgs by navArgs()
 
+
+    // Binds views with the passed in [course] information
     private fun bind(course: Course) {
         binding.apply{
             courseName.setText(course.courseName, TextView.BufferType.SPANNABLE)
@@ -48,6 +67,7 @@ class AddCourseFragment : Fragment() {
         }
     }
 
+    // Inserts the new course into the dataase and navigates up to the list fragment
     private fun addNewCourse() {
         if (isEntryValid()) {
             viewModel.addNewCourse(
@@ -60,6 +80,7 @@ class AddCourseFragment : Fragment() {
         findNavController().navigate(action)
     }
 
+    // Updadtes an existing Course in the database and navigates up to list fragment
     private fun updateCourse() {
         if(isEntryValid()) {
             viewModel.updateCourse(
@@ -73,6 +94,7 @@ class AddCourseFragment : Fragment() {
         }
     }
 
+    // Returns true if the EditTexts are not empty
     private fun isEntryValid(): Boolean {
         return viewModel.isEntryValid(
             binding.courseName.text.toString(),
@@ -90,6 +112,12 @@ class AddCourseFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Called when the view is created.
+     * The id Navigation argument determines the edit course  or add new course.
+     * If the id is positive, this method retrieves the information from the database and
+     * allows the user to update it.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -112,6 +140,7 @@ class AddCourseFragment : Fragment() {
         }
     }
 
+    // Called before fragment is destroyed
     override fun onDestroyView() {
         super.onDestroyView()
         // Hide keyboard.
