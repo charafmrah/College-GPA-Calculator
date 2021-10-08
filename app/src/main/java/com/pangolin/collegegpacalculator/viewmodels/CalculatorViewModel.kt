@@ -35,7 +35,7 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
         var creditTimesGrade = 0.0
         var credits = 0
 
-        allCourses.value?.forEach{
+        allCourses.value?.forEach {
             credits += it.courseCredit
         }
 
@@ -67,6 +67,7 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
         return result
     }
 
+    // Updates an existing course in the database
     fun updateCourse(
         courseId: Int,
         courseName: String,
@@ -77,12 +78,17 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
         updateCourse(updatedCourse)
     }
 
+    // Launching a new coroutine to upddate a course in a non-blocking way
     private fun updateCourse(course: Course) {
         viewModelScope.launch {
             courseDao.update(course)
         }
     }
 
+    /*
+    * Called to update an existing entry in the database.
+    * Returns an  instance of the [Course] entity class with the course info updated by the user
+     */
     private fun getUpdatedCourseEntry(
         courseId: Int,
         courseName: String,
@@ -97,11 +103,16 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
         )
     }
 
+    // Inserts the new Course into database
     fun addNewCourse(courseName: String, courseCredit: String, courseGrade: String) {
         val newCourse = getNewCourseEntry(courseName, courseCredit, courseGrade)
         insertCourse(newCourse)
     }
 
+    /*
+    * Called to updated an existing entry in the database.
+    * Returns an instance of the [Course] entity class with the course info updadtedd by the user
+     */
     private fun getNewCourseEntry(
         courseName: String, courseCredit: String, courseGrade: String) : Course {
         return Course(
@@ -111,22 +122,26 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
         )
     }
 
+    // Launching a new coroutine to insert a course in a non-blocking way
     private fun insertCourse(course: Course) {
         viewModelScope.launch {
             courseDao.insert(course)
         }
     }
 
+    // Launching a new coroutine to delete a course in a non-blocking way
     fun deleteCourse(course: Course) {
         viewModelScope.launch {
             courseDao.delete(course)
         }
     }
 
+    // Retrieve a course from the repository
     fun retrieveCourse(id: Int): LiveData<Course> {
         return courseDao.getCourse(id).asLiveData()
     }
 
+    // Returns true if the EditTexts are not empty
     fun isEntryValid(
         courseName: String, courseCredit: String, courseGrade: String): Boolean {
         return !(courseName.isBlank() || courseCredit.isBlank() || courseGrade.isBlank())
@@ -134,6 +149,7 @@ class CalculatorViewModel(private val courseDao: CourseDao) : ViewModel() {
 
 }
 
+// Factory class to instantiate the [ViewModel] isntance.
 class CalculatorViewModelFactory(private val courseDao: CourseDao) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CalculatorViewModel::class.java)) {

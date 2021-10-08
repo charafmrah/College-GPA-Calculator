@@ -32,6 +32,7 @@ import com.pangolin.collegegpacalculator.model.Course
 import com.pangolin.collegegpacalculator.viewmodels.CalculatorViewModel
 import com.pangolin.collegegpacalculator.viewmodels.CalculatorViewModelFactory
 
+// [CourseDetailFragment] displays the details of the  selected course
 class CourseDetailFragment: Fragment() {
 
     private val navigationArgs: CourseDetailFragmentArgs by navArgs()
@@ -55,6 +56,7 @@ class CourseDetailFragment: Fragment() {
         return binding.root
     }
 
+    // Bind views with the passed in course data
     private fun bind(course: Course) {
         binding.apply {
             courseName.text = course.courseName
@@ -65,6 +67,7 @@ class CourseDetailFragment: Fragment() {
         }
     }
 
+    // Navigate to the Edit course screen.
 //    private fun editCourse() {
 //        val action = CourseDetailFragmentDirections.actionCourseDetailFragmentToAddCourseFragment(
 //            getString(R.string.edit_fragment_title),
@@ -88,6 +91,7 @@ class CourseDetailFragment: Fragment() {
             .show()
     }
 
+    // Deletes the current  course and navigates to the list fragment
     private fun deleteCourse() {
         viewModel.deleteCourse(course)
         findNavController().navigateUp()
@@ -98,6 +102,11 @@ class CourseDetailFragment: Fragment() {
 
         val id = navigationArgs.courseId
 
+        /*
+        * Retrieve the course details using the id.
+        * Attach an observer on  the data (instead of polling for changes) and only update
+        * the UI when the data actually changes.
+         */
         viewModel.retrieveCourse(id).observe(this.viewLifecycleOwner) { selectedCourse ->
             course = selectedCourse
             bind(course)

@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pangolin.collegegpacalculator.databinding.CourseListItemBinding
 import com.pangolin.collegegpacalculator.model.Course
 
+// [ListAdapater] implementation for the recyclerview
 class CourseListAdapter(private val onCourseClicked: (Course) -> Unit) :
     ListAdapter<Course, CourseListAdapter.CourseViewHolder>(DiffCallback){
 

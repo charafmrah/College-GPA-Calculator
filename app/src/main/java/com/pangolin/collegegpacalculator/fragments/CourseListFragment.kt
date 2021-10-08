@@ -31,6 +31,7 @@ import com.pangolin.collegegpacalculator.databinding.FragmentCourseListBinding
 import com.pangolin.collegegpacalculator.viewmodels.CalculatorViewModel
 import com.pangolin.collegegpacalculator.viewmodels.CalculatorViewModelFactory
 
+// Main fragment displaying details for all courses in the database
 class CourseListFragment : Fragment() {
 
     private var _binding: FragmentCourseListBinding? = null
@@ -63,6 +64,8 @@ class CourseListFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
         binding.recyclerView.adapter = adapter
 
+        // Attach an observer on the allCourses list to update the  UI automatically when
+        // the data changes
         viewModel.allCourses.observe(this.viewLifecycleOwner) {
             courses -> courses.let {
                 adapter.submitList(it)
