@@ -1,8 +1,6 @@
 
 # College GPA Calculator
-
-Calculate your GPA using our calculator by adding your courses credits & grades. The app saves your data so you won't have to re-enter your information every time you need to calculate your GPA.
-
+A GPA calculator that works by adding the courses' credits & grades. The app saves the data persistetly using Room.
 
 ## Screenshots
 
