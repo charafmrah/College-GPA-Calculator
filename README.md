@@ -1,6 +1,6 @@
 
 # College GPA Calculator
-A GPA calculator that works by adding the courses' credits & grades. The app saves the data persistetly using Room.
+A GPA calculator that works by adding the courses' credits & grades. The app saves the data persistenly using Room.
 
 ## Screenshots
 
